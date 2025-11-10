@@ -123,52 +123,36 @@
             </section><!-- /.our_team -->
             <section class="pricing section-space" id="pricing">
                 <div class="container">
+                    {% for section in pricing_section %}
                     <div class="section_heading text_center section-space-sm">
-                        <h2><span>OUR PRICES</span>Best Price Guarantee</h2>
-                        <p class="theme_para">Multiple price tiers are available to suit different needs. Find the plan
-                            that’s right for you.</p>
+                        <h2><span>{{section.section_title}}</span>{{section.section_subtitle}}</h2>
+                        <p class="theme_para">{{section.section_paragraph}}</p>
                     </div><!-- /.section_heading -->
+                    {% endfor %}
                     <div class="pricing_inner">
                         <div class="row g-4 g-lg-0">
-                            <div class="col-12 col-md-6 col-lg-3">
+                            {% for plan in pricing_plans %}
+                            <div class="col-12 col-md-6 col-lg-4">
                                 <div class="col-inner">
-                                    <div class="price-card">
+                                    <div class="price-card {% if plan.recommended %}price-card-premium{% endif %}">
                                         <div class="card-head">
-                                            <h4>basic plan</h4>
+                                            <h4>{{plan.plan}}</h4>
                                         </div><!-- /.card-head -->
                                         <div class="card-body" style="text-align: center;">
-                                            <h4><span>$</span>2<span class="pkg_duration">1 month</span></h4>
+                                            <h4><span>$</span>{{plan.price}}<span class="pkg_duration">{{plan.duration}}</span></h4>
                                             <ul>
-                                                <li>Bring your own FileCoin DataCap</li>
+                                                {% for feature in plan.features.all %}
+                                                <li>{{ feature.feature }}</li>
+                                                {% endfor %}
                                             </ul>
                                             <div class="card-footer">
-                                                <a href="#contact_us"
-                                                    class="theme-button main_theme_button bg_theme_button">get
-                                                    started</a>
+                                                <a href="#contact_us" class="theme-button main_theme_button {% if not plan.recommended %}bg_theme_button{% endif %}">{{plan.link_button}}</a>
                                             </div><!-- /.card-footer -->
                                         </div><!-- /.card-body -->
                                     </div><!-- /.price-card -->
                                 </div><!-- /.col-inner -->
-                            </div><!-- /.col-lg-3 -->
-                            <div class="col-12 col-md-6 col-lg-3">
-                                <div class="col-inner">
-                                    <div class="price-card price-card-premium">
-                                        <div class="card-head">
-                                            <h4>plus plan</h4>
-                                        </div><!-- /.card-head -->
-                                        <div class="card-body" style="text-align: center;">
-                                            <h4><span>$</span>3<span class="pkg_duration">1 month</span></h4>
-                                            <ul>
-                                                <li>Includes FileCoin DataCap</li>
-                                            </ul>
-                                            <div class="card-footer">
-                                                <a href="#contact_us" class="theme-button main_theme_button">get
-                                                    started</a>
-                                            </div><!-- /.card-footer -->
-                                        </div><!-- /.card-body -->
-                                    </div><!-- /.price-card -->
-                                </div><!-- /.col-inner -->
-                            </div><!-- /.col-lg-3 -->
+                            </div><!-- /.col-lg-4 -->
+                            {% endfor %}
                         </div><!-- /.row -->
                     </div><!-- /.pricing_inner -->
                 </div><!-- /.container -->
@@ -184,7 +168,7 @@
                             <div class="col-lg-5">
                                 <div class="col-inner">
                                     <figure>
-                                        <img src="{% static '/assets/images/about-us.jpg' %}" loading="lazy" alt="">
+                                        <img src="{% static '/assets/images/contact_us.jpg' %}" loading="lazy" alt="">
                                     </figure>
                                 </div><!-- /.col-inner -->
                             </div><!-- /.col-lg-6 -->
