@@ -1,0 +1,338 @@
+@import "../css/vendors/bs-5.3/bootstrap";
+@import "../css/partials/fonts";
+@import "../css/partials/base";
+
+
+.site-logo {
+    height: 2.8rem;
+}
+
+.main-navbar {
+    background-color: $white-color;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4rem;
+    z-index: 100;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+
+    .navbar-toggler {
+        border: none;
+        color: $black-color;
+
+        &:focus,
+        &:focus-visible,
+        &:active {
+            outline: none !important;
+            box-shadow: none !important;
+        }
+    }
+
+    .navbar-nav {
+        li {
+            &:not(:first-child) {
+                margin-left: 2.5rem;
+            }
+        }
+    }
+
+}
+
+.offcanvas {
+    background-color: $white-color;
+
+    .btn-close {
+        background-color: $white-color;
+        opacity: 1;
+
+        &:focus,
+        &:focus-visible,
+        &:active {
+            outline: none !important;
+            box-shadow: none !important;
+        }
+    }
+
+    .navbar-nav {
+        li {
+            &:not(:last-child) {
+                margin-bottom: 1.2rem;
+            }
+        }
+    }
+}
+
+
+
+
+.main-hero-section {
+    margin-top: 4rem;
+    width: 100%;
+    min-height: 80vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: 1;
+
+    }
+
+    .main-hero-content {
+        z-index: 3;
+        width: 100%;
+
+    }
+
+    .main-hero-content-inner {
+        color: $white-color;
+
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: $black-color;
+        opacity: .4;
+        z-index: 2;
+    }
+
+}
+
+.main-hero-heading {
+    font-size: clamp(2.8rem, 3vw, 5.2rem);
+    font-weight: 700;
+    padding-bottom: 2rem;
+
+    span {
+        padding-top: 1rem;
+        display: block;
+        font-size: 65%;
+        font-weight: 500;
+    }
+}
+
+
+section.about-us {
+    .col-inner {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    figure {
+        width: 100%;
+        height: 100%;
+        aspect-ratio: 1/.8;
+        border-radius: 20px;
+        overflow: hidden;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+
+    .main_theme_button {
+        margin-top: 2rem;
+    }
+}
+
+
+section.our_team {
+
+    .swiper-slide {
+        cursor: pointer;
+
+        figure {
+            width: 100%;
+            aspect-ratio: 1/1.1;
+            border-radius: 20px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                transition: all ease-in-out .5s;
+            }
+
+
+        }
+
+        &:hover {
+            img {
+                scale: 1.05;
+            }
+        }
+    }
+
+}
+
+
+section.pricing {
+    .col-inner {
+        height: 100%;
+
+    }
+
+    .price-card {
+        height: 100%;
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+        width: 100%;
+        display: flex;
+        gap: 5rem;
+        flex-direction: column;
+        justify-content: space-between;
+
+        .card-head {
+            background-color: rgb(241, 241, 241);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1.75rem 0;
+            color: rgb(128, 128, 128);
+
+            h4 {
+                text-transform: uppercase;
+                letter-spacing: .2rem;
+                font-size: 1.1rem;
+                font-weight: normal;
+            }
+        }
+
+        .card-body {
+            padding: 2rem 0;
+
+            h4 {
+                margin-bottom: 1.5rem;
+                font-size: 3rem;
+                font-weight: bold;
+
+                span {
+                    font-size: 65%;
+                    font-weight: 300;
+                    color: rgb(80, 80, 80);
+                }
+
+                span.pkg_duration {
+                    font-family: "Inter", sans-serif;
+                    padding-top: .8rem;
+                    display: block;
+                    font-size: 50%;
+                    font-weight: normal;
+                }
+            }
+
+            ul {
+                margin-bottom: 2rem;
+
+                li {
+                    color: rgb(128, 128, 128);
+                    font-size: 1rem;
+                    font-weight: 400;
+
+                    &:not(:last-child) {
+                        margin-bottom: 1.3rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+section.contact_us {
+    min-height: 80vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 5rem 0;
+
+    img.theme_bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: 1;
+
+    }
+
+    .contact_us_inner {
+        z-index: 3;
+        width: 100%;
+    }
+
+    .col-inner {
+        height: 100%;
+        width: 100%;
+    }
+
+    figure {
+        width: 100%;
+        aspect-ratio: 1/.8;
+        border-radius: 20px;
+        overflow: hidden;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: $white-color;
+        opacity: .5;
+        z-index: 2;
+    }
+
+    .form-group {
+        input {
+            padding: .75rem;
+        }
+
+        input,
+        textarea {
+            font-size: .9rem;
+            font-weight: 500;
+
+            &::placeholder {
+                color: rgb(145, 145, 145);
+            }
+
+            &:focus {
+                outline: none;
+                border: 1px solid $theme-color;
+                box-shadow: 0 0 5px $theme-color-2;
+            }
+        }
+    }
+}

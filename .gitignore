@@ -1,0 +1,35 @@
+# Python
+*.pyc
+__pycache__/
+*.pyo
+*.pyd
+*.sqlite3
+
+# Env files
+.env
+*.env
+
+# Django
+*.log
+*.pot
+*.py[cod]
+*.sqlite3
+*.db
+db.sqlite3
+media/
+staticfiles/
+__pycache__/
+
+# VS Code / IDEs
+.vscode/
+.idea/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Node / frontend (if using npm)
+node_modules/
+
+# Cache files
+*.cache
